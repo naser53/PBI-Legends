@@ -1,0 +1,87 @@
+.legends-root {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    padding: 6px;
+    box-sizing: border-box;
+    overflow: auto;
+    user-select: none;
+    --marker: 10px;
+    --gap: 8px;
+}
+
+.legends-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    max-width: 100%;
+}
+
+.legends-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.legends-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    &.no-data { cursor: default; }
+    &.dimmed { opacity: 0.4; }
+}
+
+.legends-marker {
+    flex: none;
+    width: var(--marker);
+    height: var(--marker);
+    border-radius: 50%;
+}
+
+.legends-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.legends-toggle {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font: inherit;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid #118DFF;
+    background: #118DFF;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.85;
+    &.off {
+        background: transparent;
+        color: #118DFF;
+    }
+    &:hover { opacity: 1; }
+}
+
+// Top and bottom positions lay the items out in a row.
+.legends-root[data-position^="Top"],
+.legends-root[data-position^="Bottom"] {
+    .legends-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--gap);
+    }
+    .legends-title { margin-bottom: 0; }
+}
+
+.legends-root[data-position^="Top"] { align-items: flex-start; padding-top: 26px; }
+.legends-root[data-position^="Bottom"] { align-items: flex-end; }
+.legends-root[data-position$="Center"], .legends-root[data-position="Center"] { align-items: center; }
+.legends-root[data-position^="Top"][data-position$="Center"] { align-items: flex-start; }
+.legends-root[data-position^="Bottom"][data-position$="Center"] { align-items: flex-end; }
+
+.legends-root[data-position$="Left"], .legends-root[data-position="LeftCenter"] { justify-content: flex-start; }
+.legends-root[data-position$="Right"], .legends-root[data-position="RightCenter"] { justify-content: flex-end; }
+.legends-root[data-position="TopCenter"], .legends-root[data-position="BottomCenter"], .legends-root[data-position="Center"] { justify-content: center; }

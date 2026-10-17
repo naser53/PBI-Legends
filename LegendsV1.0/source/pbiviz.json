@@ -1,0 +1,26 @@
+{
+  "visual": {
+    "name": "LegendsV1",
+    "displayName": "LegendsV1.0",
+    "guid": "legendsV18D92C021F5674D44A2649CCF1E3AF81A",
+    "visualClassName": "Visual",
+    "version": "1.0.0.0",
+    "description": "Legend-only visual with auto theme colors, position options and a filtered / no-filter toggle.",
+    "supportUrl": "https://powerbi.microsoft.com",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "5.11.1",
+  "author": {
+    "name": "PBI-Legends",
+    "email": "ndaneshi@gmail.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": null,
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": [],
+  "version": "1.0.0.0"
+}

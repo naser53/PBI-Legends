@@ -1,0 +1,128 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Legend",
+            "name": "category",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Values",
+            "name": "measure",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "category": {
+                        "max": 1
+                    },
+                    "measure": {
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "category"
+                    },
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 1000
+                        }
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "measure"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "objects": {
+        "legend": {
+            "properties": {
+                "position": {
+                    "type": {
+                        "enumeration": []
+                    }
+                },
+                "showTitle": {
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "titleText": {
+                    "type": {
+                        "text": true
+                    }
+                },
+                "fontSize": {
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "fontFamily": {
+                    "type": {
+                        "formatting": {
+                            "fontFamily": true
+                        }
+                    }
+                },
+                "fontColor": {
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "markerSize": {
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "itemGap": {
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "interaction": {
+            "properties": {
+                "filtered": {
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "showToggle": {
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "memory": {
+            "properties": {
+                "items": {
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        }
+    },
+    "supportsMultiVisualSelection": true,
+    "privileges": []
+}
